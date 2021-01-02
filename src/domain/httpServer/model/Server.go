@@ -14,18 +14,18 @@ type Server struct {
 	Engine    *gin.Engine
 	Server    *http.Server
 	IsRunning bool
-	*ServiceConfig
+	*ServerConfig
 }
 
 var n = 0
-func NewHttpServer(config *ServiceConfig) *Server {
+func NewHttpServer(config *ServerConfig) *Server {
 	n++
 	engine := gin.New()
 	config.Apply(engine)
 	c := &Server{
-		ID:            n,
-		ServiceConfig: config,
-		Engine:        engine,
+		ID:           n,
+		ServerConfig: config,
+		Engine:       engine,
 		Server: &http.Server{
 			Addr:    ":" + config.Port,
 			Handler: engine,

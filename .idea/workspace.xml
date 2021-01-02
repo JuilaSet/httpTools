@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed2fc744-1931-4b85-a023-570263fc7fde" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/domain/IEvent.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/fileNotifier/Event.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/domain/httpServer/Event.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/httpServer/model/ServerConfig.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/infrastructure/OsWait.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/infrastructure/event/IBus.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/infrastructure/event/model/Listener.go" afterDir="false" />
@@ -20,14 +20,15 @@
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/FileWatcherService.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/model/Service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/Event.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/Event.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/IWatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/IWatcher.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/Service.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/model/Server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/builder.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/builder.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/fileWatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/fileWatcher.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/vo/WatchedFiles.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/vo/WatchedFiles.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/HttpServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/Server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/Server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/Server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/ServerConfigBuilder.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/ServerConfigBuilder.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/ServiceConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/ServiceConfig.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/ServiceConfig.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/proxyInfo/ProxyInfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/proxyInfo/ProxyInfo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/staticFileInfo/staticFileInfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/staticFileInfo/staticFileInfo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/httpServer/vo/VDir.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/vo/VDir.go" afterDir="false" />

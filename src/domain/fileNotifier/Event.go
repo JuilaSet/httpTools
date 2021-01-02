@@ -13,7 +13,7 @@ import (
 const EventName = "StartWatcher"
 
 type Event struct {
-	server  *model.Service
+	server  *model.Server
 	emitter *event.Emitter
 }
 
@@ -38,7 +38,7 @@ func (s *Event) CreateHandler() vo.HFunc {
 		}
 
 		// 监视器服务
-		s.server = model.NewFileWatcherService(fileWatcher.NewFileStatusWatcher(
+		s.server = model.NewFileWatcherServer(fileWatcher.NewFileStatusWatcher(
 			fileWatcher.WithFilename("config.yml"),
 			fileWatcher.WithWriteHandlers(func(event fsnotify.Event) {
 				log.Println("写入文件 : ", event.Name)

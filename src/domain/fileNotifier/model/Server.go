@@ -6,13 +6,13 @@ import (
 	"log"
 )
 
-type Service struct {
+type Server struct {
 	fileWatcher fileWatcher.IWatcher
 	watcher     *fsnotify.Watcher
 	waitCh      chan bool
 }
 
-func NewFileWatcherService(fileWatcher fileWatcher.IWatcher) *Service {
+func NewFileWatcherServer(fileWatcher fileWatcher.IWatcher) *Server {
 	// 创建一个监控对象
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
@@ -24,18 +24,18 @@ func NewFileWatcherService(fileWatcher fileWatcher.IWatcher) *Service {
 			log.Fatal(err)
 		}
 	}
-	return &Service{
+	return &Server{
 		fileWatcher: fileWatcher,
 		watcher:     watcher,
 		waitCh:      make(chan bool),
 	}
 }
 
-func (w *Service) Quit() {
+func (w *Server) Quit() {
 	w.waitCh <- true
 }
 
-func (w *Service) Run() error {
+func (w *Server) Run() error {
 	defer w.watcher.Close()
 
 	// 另启一个goroutine来处理监控对象的事件

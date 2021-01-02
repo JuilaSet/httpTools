@@ -8,10 +8,10 @@ import (
 )
 
 // builder
-type Builder func(app *ServiceConfig)
+type Builder func(app *ServerConfig)
 type Builders []Builder
 
-func (builders Builders) Apply(model *ServiceConfig) {
+func (builders Builders) Apply(model *ServerConfig) {
 	for _, f := range builders {
 		f(model)
 	}
@@ -19,7 +19,7 @@ func (builders Builders) Apply(model *ServiceConfig) {
 
 // build methods
 func WithConfig(c *config.Root) Builder {
-	return func(config *ServiceConfig) {
+	return func(config *ServerConfig) {
 		config.Port = strconv.Itoa(c.Config.Port)
 
 		// 构建代理器

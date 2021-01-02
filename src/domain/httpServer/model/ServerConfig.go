@@ -9,14 +9,14 @@ import (
 )
 
 // aggregate root
-type ServiceConfig struct {
+type ServerConfig struct {
 	*vo.VServerInfo `json:"service_info"`
 	Proxies         proxyInfo.Proxies      `json:"proxies"`
 	Statics         staticFileInfo.Statics `json:"statics" yaml:"statics"`
 }
 
-func NewServiceConfig(builder ...Builder) *ServiceConfig {
-	c := &ServiceConfig{
+func NewServiceConfig(builder ...Builder) *ServerConfig {
+	c := &ServerConfig{
 		VServerInfo: vo.NewVServiceInfo(""),
 		Proxies:     proxyInfo.Proxies{},
 	}
@@ -24,7 +24,7 @@ func NewServiceConfig(builder ...Builder) *ServiceConfig {
 	return c
 }
 
-func (info *ServiceConfig) Apply(engine *gin.Engine) {
+func (info *ServerConfig) Apply(engine *gin.Engine) {
 	log.Println("Apply Service Config ...")
 	info.Proxies.Apply(engine)
 	info.Statics.Apply(engine)
