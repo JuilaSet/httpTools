@@ -1,0 +1,11 @@
+{
+  "name": "httpproxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "beforeBuild": "copy .\\config.* /D build && copy .\\static /D build\\static"
+  },
+  "author": "",
+  "license": "ISC"
+}

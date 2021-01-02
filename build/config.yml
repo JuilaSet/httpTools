@@ -1,0 +1,12 @@
+app:
+  port: 8448
+  proxies:
+    - method: "GET"
+      target: "http://127.0.0.1:8080/test"
+      route: "/kube"
+    - method: "GET"
+      target: "http://127.0.0.1:8080"
+      route: "/api/faas"
+  statics:
+    - dir: "./static"
+      route: "/www"
