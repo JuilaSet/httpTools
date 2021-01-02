@@ -55,7 +55,7 @@ func (w *FileStatusWatcher) Chmod(ev fsnotify.Event) {
 }
 
 func (w *FileStatusWatcher) FileNames() (arr []string) {
-	h := func(f *vo.WatchedFile) string {
+	h := func(f *vo.VWatchedFile) string {
 		return f.Filename
 	}
 	for _, v := range w.WatchedFiles {

@@ -5,16 +5,16 @@ import (
 	"log"
 )
 
-type WatchedFiles []*WatchedFile
-type WatchedFile struct {
+type WatchedFiles []*VWatchedFile
+type VWatchedFile struct {
 	Filename string
 }
 
-func NewWatchedFile(fileName string) *WatchedFile {
+func NewWatchedFile(fileName string) *VWatchedFile {
 	if !fileSys.IsExist(fileName) {
 		log.Println("file not exist")
 	}
-	return &WatchedFile{
+	return &VWatchedFile{
 		Filename: fileName,
 	}
 }

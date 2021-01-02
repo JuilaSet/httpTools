@@ -2,38 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed2fc744-1931-4b85-a023-570263fc7fde" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/domain/IEvent.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/httpServer/Event.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/httpServer/model/ServerConfig.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/OsWait.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/event/IBus.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/event/model/Listener.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/event/vo/VData.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/event/vo/VErrPip.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/event/vo/VHandler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/event/vo/VPip.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/httpServer_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpProxyDDD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpTools.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/httpServer/vo/VFileNameInfo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/httpUtil/ErrorWapper.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/httpUploaderServer_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/Event.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/Event.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/IWatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/IWatcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/Service.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/model/Server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/builder.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/builder.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/fileWatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/fileWatcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/vo/WatchedFiles.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/vo/WatchedFiles.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/Server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/Server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/ServerConfigBuilder.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/ServerConfigBuilder.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/ServiceConfig.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/proxyInfo/ProxyInfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/proxyInfo/ProxyInfo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/vo/WatchedFiles.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/vo/VWatchedFiles.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/staticFileInfo/staticFileInfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/staticFileInfo/staticFileInfo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/vo/VDir.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/vo/VDir.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/event/Emitter.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/event/Emitter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/event/Event.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/event/vo/VEvent.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,34 +38,37 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/domain/fileNotifier" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="GoMoveDeclarationDialog.RECENT_KEY">
-      <recent name="$PROJECT_DIR$/src/infrastructure/event/vo/VPip" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\D_box\tools\httpTools\src\domain\fileNotifier" />
-      <recent name="D:\D_box\tools\httpProxyDDD" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\D_box\tools\httpTools\test\static" />
       <recent name="D:\D_box\tools\httpTools\src\infrastructure\event" />
       <recent name="D:\D_box\tools\httpTools\src\domain\fileNotifier\model\fileWatcher" />
       <recent name="D:\D_box\tools\httpTools\src\domain\fileNotifier\model" />
       <recent name="D:\D_box\tools\httpTools\src\domain\httpServer" />
-      <recent name="D:\D_box\tools\httpTools\src\domain\httpServer\model" />
+    </key>
+    <key name="GoMoveDeclarationDialog.RECENT_KEY">
+      <recent name="$PROJECT_DIR$/src/infrastructure/event/vo/VPip" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\D_box\tools\httpTools" />
+      <recent name="D:\D_box\tools\httpTools\src\domain\fileNotifier" />
+      <recent name="D:\D_box\tools\httpProxyDDD" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestHttpServer in httpTools/test">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="httpTools" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -118,8 +98,8 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Shell Script.build linux" />
       <item itemvalue="Go Test.TestHttpServer in httpTools/test" />
+      <item itemvalue="Shell Script.build linux" />
     </list>
     <recent_temporary>
       <list>
@@ -140,18 +120,26 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
+    <state x="233" y="0" key="#Deployment" timestamp="1609581463722">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="0" key="#Deployment/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609581463722" />
     <state x="233" y="0" key="#Go_Modules_(vgo)" timestamp="1609410078371">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#Go_Modules_(vgo)/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609410078371" />
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609551886756">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609577505511">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609551886756" />
-    <state x="446" y="57" key="#com.intellij.ide.util.MemberChooser" timestamp="1609568655686">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609577505511" />
+    <state x="381" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609576716191">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609568655686" />
+    <state x="381" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609576716191" />
+    <state x="446" y="57" key="#com.intellij.ide.util.MemberChooser" timestamp="1609582639747">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609582639747" />
     <state x="93" y="93" width="1095" height="495" key="DiffContextDialog" timestamp="1609416302471">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -160,22 +148,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609555909379" />
-    <state width="1237" height="357" key="GridCell.Tab.0.bottom" timestamp="1609572648291">
+    <state width="768" height="775" key="GridCell.Tab.0.bottom" timestamp="1609590711279">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="357" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609572648291" />
-    <state width="1237" height="357" key="GridCell.Tab.0.center" timestamp="1609572648291">
+    <state width="768" height="775" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609590711279" />
+    <state width="768" height="775" key="GridCell.Tab.0.center" timestamp="1609590711279">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="357" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609572648291" />
-    <state width="1237" height="357" key="GridCell.Tab.0.left" timestamp="1609572648291">
+    <state width="768" height="775" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609590711279" />
+    <state width="768" height="775" key="GridCell.Tab.0.left" timestamp="1609590711279">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="357" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609572648291" />
-    <state width="1237" height="357" key="GridCell.Tab.0.right" timestamp="1609572648291">
+    <state width="768" height="775" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609590711279" />
+    <state width="768" height="775" key="GridCell.Tab.0.right" timestamp="1609590711279">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="357" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609572648291" />
+    <state width="768" height="775" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609590711279" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1609586082394">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609586082394" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1609586082394">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609586082394" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1609586082393">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609586082393" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1609586082394">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609586082394" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1609553164213">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -184,5 +188,13 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="416" y="54" key="com.goide.refactor.move.GoMoveDeclarationDialog/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609555932226" />
+    <state x="506" y="234" key="publish.login" timestamp="1609581364724">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="506" y="234" key="publish.login/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609581364724" />
+    <state x="303" y="1" key="search.everywhere.popup" timestamp="1609584520018">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" key="search.everywhere.popup/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609584520018" />
   </component>
 </project>
