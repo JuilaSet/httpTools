@@ -1,4 +1,4 @@
-package fileNotifier
+package fileWatcher
 
 import "github.com/fsnotify/fsnotify"
 

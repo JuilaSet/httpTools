@@ -2,7 +2,7 @@ package vo
 
 import (
 	"errors"
-	"httpProxyDDD/src/infrastructure/fileSys"
+	"httpTools/src/infrastructure/fileSys"
 )
 
 type VDir struct {

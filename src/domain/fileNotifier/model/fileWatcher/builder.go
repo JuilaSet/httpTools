@@ -2,7 +2,7 @@ package fileWatcher
 
 import (
 	"github.com/fsnotify/fsnotify"
-	"httpProxyDDD/src/domain/fileNotifier/vo"
+	"httpTools/src/domain/fileNotifier/vo"
 )
 
 // builder

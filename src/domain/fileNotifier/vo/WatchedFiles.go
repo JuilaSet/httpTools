@@ -1,7 +1,7 @@
 package vo
 
 import (
-	"httpProxyDDD/src/infrastructure/fileSys"
+	"httpTools/src/infrastructure/fileSys"
 	"log"
 )
 

@@ -1,17 +1,18 @@
-package fileNotifier
+package model
 
 import (
 	"github.com/fsnotify/fsnotify"
+	"httpTools/src/domain/fileNotifier/model/fileWatcher"
 	"log"
 )
 
-type FileWatcherService struct {
-	fileWatcher IWatcher
+type Service struct {
+	fileWatcher fileWatcher.IWatcher
 	watcher     *fsnotify.Watcher
 	waitCh      chan bool
 }
 
-func NewFileWatcherService(fileWatcher IWatcher) *FileWatcherService {
+func NewFileWatcherService(fileWatcher fileWatcher.IWatcher) *Service {
 	// 创建一个监控对象
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
@@ -23,23 +24,29 @@ func NewFileWatcherService(fileWatcher IWatcher) *FileWatcherService {
 			log.Fatal(err)
 		}
 	}
-	return &FileWatcherService{
+	return &Service{
 		fileWatcher: fileWatcher,
 		watcher:     watcher,
 		waitCh:      make(chan bool),
 	}
 }
 
-func (w *FileWatcherService) Quit() {
+func (w *Service) Quit() {
 	w.waitCh <- true
 }
 
-func (w *FileWatcherService) Run() error {
+func (w *Service) Run() error {
 	defer w.watcher.Close()
 
-	// 我们另启一个goroutine来处理监控对象的事件
+	// 另启一个goroutine来处理监控对象的事件
 	go func() {
 		log.Println("Starting watch server....")
+		defer func() {
+			err := recover()
+			if err != nil {
+				log.Fatal(err)
+			}
+		}()
 		for {
 			select {
 			case ev := <-w.watcher.Events:

@@ -1,29 +1,28 @@
-package httpServer
+package model
 
 import (
 	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"httpProxyDDD/src/domain/httpServer/model"
 	"log"
 	"net/http"
 	"time"
 )
 
-type HttpServer struct {
+type Server struct {
 	ID        int
 	Engine    *gin.Engine
 	Server    *http.Server
 	IsRunning bool
-	*model.ServiceConfig
+	*ServiceConfig
 }
 
 var n = 0
-func NewHttpServer(config *model.ServiceConfig) *HttpServer {
+func NewHttpServer(config *ServiceConfig) *Server {
 	n++
 	engine := gin.New()
 	config.Apply(engine)
-	c := &HttpServer{
+	c := &Server{
 		ID:            n,
 		ServiceConfig: config,
 		Engine:        engine,
@@ -35,8 +34,8 @@ func NewHttpServer(config *model.ServiceConfig) *HttpServer {
 	return c
 }
 
-func (g *HttpServer) Quit() {
-	log.Println(g.ID, "Shutdown Server ...")
+func (g *Server) Quit() {
+	log.Println(g.ID, "Shutdown server ...")
 
 	// 5 秒超时时间
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
@@ -46,15 +45,15 @@ func (g *HttpServer) Quit() {
 	}()
 
 	if err := g.Server.Shutdown(ctx); err != nil {
-		log.Fatal(g.ID, "Server Shutdown error:", err)
+		log.Fatal(g.ID, "server Shutdown error:", err)
 	}
-	log.Println(g.ID, "Server exiting")
+	log.Println(g.ID, "server exiting")
 }
 
-func (g *HttpServer) Run() error {
+func (g *Server) Run() error {
 	g.IsRunning = true
 
-	log.Println(g.ID, "Starting Server...")
+	log.Println(g.ID, "Starting server...")
 	for _, v := range g.Engine.Routes() {
 		fmt.Println("server:", g.ID, v.Method, v.Path)
 	}

@@ -2,7 +2,7 @@ package proxyInfo
 
 import (
 	"github.com/gin-gonic/gin"
-	"httpProxyDDD/src/domain/httpServer/vo"
+	"httpTools/src/domain/httpServer/vo"
 	"log"
 	"net/http"
 	"net/http/httputil"

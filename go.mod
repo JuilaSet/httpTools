@@ -1,4 +1,4 @@
-module httpProxyDDD
+module httpTools
 
 go 1.14
 

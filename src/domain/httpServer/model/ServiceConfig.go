@@ -2,9 +2,9 @@ package model
 
 import (
 	"github.com/gin-gonic/gin"
-	"httpProxyDDD/src/domain/httpServer/model/proxyInfo"
-	"httpProxyDDD/src/domain/httpServer/model/staticFileInfo"
-	"httpProxyDDD/src/domain/httpServer/vo"
+	"httpTools/src/domain/httpServer/model/proxyInfo"
+	"httpTools/src/domain/httpServer/model/staticFileInfo"
+	"httpTools/src/domain/httpServer/vo"
 	"log"
 )
 
@@ -15,7 +15,7 @@ type ServiceConfig struct {
 	Statics         staticFileInfo.Statics `json:"statics" yaml:"statics"`
 }
 
-func NewApp(builder ...Builder) *ServiceConfig {
+func NewServiceConfig(builder ...Builder) *ServiceConfig {
 	c := &ServiceConfig{
 		VServerInfo: vo.NewVServiceInfo(""),
 		Proxies:     proxyInfo.Proxies{},

@@ -1,9 +1,9 @@
 package model
 
 import (
-	"httpProxyDDD/src/domain/httpServer/model/proxyInfo"
-	"httpProxyDDD/src/domain/httpServer/model/staticFileInfo"
-	"httpProxyDDD/src/infrastructure/config"
+	"httpTools/src/domain/httpServer/model/proxyInfo"
+	"httpTools/src/domain/httpServer/model/staticFileInfo"
+	"httpTools/src/infrastructure/config"
 	"strconv"
 )
 
