@@ -1,6 +1,7 @@
 package model
 
 import (
+	"httpTools/src/domain/httpServer/model/fileUploader"
 	"httpTools/src/domain/httpServer/model/proxyInfo"
 	"httpTools/src/domain/httpServer/model/staticFileInfo"
 	"httpTools/src/infrastructure/config"
@@ -18,12 +19,12 @@ func (builders Builders) Apply(model *ServerConfig) {
 }
 
 // build methods
-func WithConfig(c *config.Root) Builder {
+func WithConfig(c *config.Config) Builder {
 	return func(config *ServerConfig) {
-		config.Port = strconv.Itoa(c.Config.Port)
+		config.Port = strconv.Itoa(c.App.Port)
 
 		// 构建代理器
-		for _, p := range c.Config.Proxies {
+		for _, p := range c.App.Proxies {
 			config.Proxies = append(config.Proxies, proxyInfo.NewProxy(
 				proxyInfo.WithHttpMethod(p.Method),
 				proxyInfo.WithRoute(p.Route),
@@ -32,10 +33,19 @@ func WithConfig(c *config.Root) Builder {
 		}
 
 		// 构建静态资源
-		for _, s := range c.Config.Statics {
+		for _, s := range c.App.Statics {
 			config.Statics = append(config.Statics, staticFileInfo.NewStaticFileInfo(
 				staticFileInfo.WithDir(s.Dir),
 				staticFileInfo.WithRoute(s.Route),
+			))
+		}
+
+		// 构建文件上传器
+		for _, u := range c.App.Uploads {
+			config.Uploads = append(config.Uploads, fileUploader.NewDirUploader(
+				fileUploader.NewVUploadDir(u.Dir),
+				fileUploader.NewVRoute(u.Route),
+				fileUploader.NewVTarget(u.Target),
 			))
 		}
 	}

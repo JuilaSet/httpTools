@@ -2,6 +2,7 @@ package httpServer
 
 import (
 	"encoding/json"
+	"httpTools/src/domain/domEvent/ConfigFileReload"
 	"httpTools/src/domain/httpServer/model"
 	"httpTools/src/infrastructure/config"
 	"httpTools/src/infrastructure/event"
@@ -14,16 +15,22 @@ const EventName = "RestartServer"
 type Event struct {
 	server  *model.Server
 	emitter *event.Emitter
+	serviceConfig *config.Config
 }
 
-func NewEvent(emitter *event.Emitter) *Event {
+func NewEvent(emitter *event.Emitter, serviceConfig *config.Config) *Event {
 	e := &Event{
 		emitter: emitter,
+		serviceConfig: serviceConfig,
 	}
 
 	// 注册事件
 	e.Register()
 	return e
+}
+
+func (s *Event) Emit() {
+	s.emitter.Emit(EventName, s.serviceConfig)
 }
 
 func (s *Event) Register() {
@@ -38,8 +45,10 @@ func (s *Event) CreateHandler() vo.HFunc {
 
 		// 读取配置
 		app := model.NewServiceConfig(
-			model.WithConfig(config.NewAppConfig("config.yml")),
+			model.WithConfig(ConfigFileReload.FromData(data).Data()),
 		)
+
+		// 构建应用
 		s.server = model.NewHttpServer(app)
 
 		msg, _ := json.MarshalIndent(app, "", "\t")

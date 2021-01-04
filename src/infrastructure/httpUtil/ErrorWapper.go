@@ -13,8 +13,8 @@ func ErrorWrapper(handler HandlerFunc, errorMapper func(error) string) func(c *g
 	return func(c *gin.Context) {
 		err := handler(c)
 		if err != nil {
-			c.AbortWithError(http.StatusBadRequest, errors.New(errorMapper(err)))
 			log.Println(err)
+			_ = c.AbortWithError(http.StatusBadRequest, errors.New(errorMapper(err)))
 		}
 	}
 }

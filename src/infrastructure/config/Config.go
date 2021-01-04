@@ -5,12 +5,12 @@ import (
 	"io/ioutil"
 )
 
-type Root struct {
-	Config Config `json:"app" yaml:"app"`
+type Config struct {
+	App App `json:"app" yaml:"app"`
 }
 
-func NewAppConfig(filepath string) *Root {
-	c := &Root{}
+func NewAppConfig(filepath string) *Config {
+	c := &Config{}
 	yamlFile, err := ioutil.ReadFile(filepath)
 	if err != nil {
 		panic(err)

@@ -2,20 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed2fc744-1931-4b85-a023-570263fc7fde" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/httpServer/vo/VFileNameInfo.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/httpUtil/ErrorWapper.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/httpUploaderServer_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/domEvent/ConfigFileReload/ConfigFileReload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/httpServer/model/fileUploader/DirUploader.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/httpServer/model/fileUploader/VDir.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/httpServer/model/fileUploader/VFileList.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/httpServer/model/fileUploader/VRoute.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/httpServer/model/fileUploader/VTargetURL.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/config/UploadConfig.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/infrastructure/fileUtil/Dir.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/VFileInfo_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/VFileList_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/upload/static/test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/upload/static/testdir/testA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/upload/test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/upload/testdir/testA" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/fileWatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/fileWatcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/vo/WatchedFiles.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/fileNotifier/vo/VWatchedFiles.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/staticFileInfo/staticFileInfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/staticFileInfo/staticFileInfo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpproxy" beforeDir="false" afterPath="$PROJECT_DIR$/httpproxy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/IEvent.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/IEvent.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/Event.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/configFileNotifier/Event.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/Server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/configFileNotifier/model/Server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/IWatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/configFileNotifier/model/fileWatcher/IWatcher.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/builder.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/configFileNotifier/model/fileWatcher/builder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/model/fileWatcher/fileWatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/configFileNotifier/model/fileWatcher/fileWatcher.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/fileNotifier/vo/VWatchedFiles.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/configFileNotifier/vo/VWatchedFiles.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/Event.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/Event.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/ServerConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/ServerConfig.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/ServerConfigBuilder.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/ServerConfigBuilder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/proxyInfo/ProxyInfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/proxyInfo/ProxyInfo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/vo/VDir.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/vo/VDir.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/vo/VFileNameInfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/vo/VFileNameInfo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/vo/VRoute.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/vo/VRoute.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/config/AppConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/config/App.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/config/Config.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/config/Config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/fileSys/FileCheck.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/fileUtil/FileCheck.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/httpUtil/ErrorWapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/httpUtil/ErrorWapper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/afile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/httpUploaderServer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/httpUploaderServer_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/static/bbb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -42,30 +87,37 @@
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/upload" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\D_box\tools\httpTools\test\static" />
-      <recent name="D:\D_box\tools\httpTools\src\infrastructure\event" />
-      <recent name="D:\D_box\tools\httpTools\src\domain\fileNotifier\model\fileWatcher" />
-      <recent name="D:\D_box\tools\httpTools\src\domain\fileNotifier\model" />
-      <recent name="D:\D_box\tools\httpTools\src\domain\httpServer" />
-    </key>
     <key name="GoMoveDeclarationDialog.RECENT_KEY">
       <recent name="$PROJECT_DIR$/src/infrastructure/event/vo/VPip" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\D_box\tools\httpTools\test\upload" />
+      <recent name="D:\D_box\tools\httpTools\test" />
+      <recent name="D:\D_box\tools\httpTools\src\domain\httpClient\vo" />
       <recent name="D:\D_box\tools\httpTools" />
       <recent name="D:\D_box\tools\httpTools\src\domain\fileNotifier" />
-      <recent name="D:\D_box\tools\httpProxyDDD" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\D_box\tools\httpTools\src\domain\httpServer\model\fileUploader" />
+      <recent name="D:\D_box\tools\httpTools\src\domain\httpServer\model" />
+      <recent name="D:\D_box\tools\httpTools\test" />
+      <recent name="D:\D_box\tools\httpTools\upload\testdir" />
+      <recent name="D:\D_box\tools\httpTools\src\domain\domEvent\ConfigFileReload" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build main.go">
@@ -77,7 +129,7 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="TestHttpServer in httpTools/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestHttpUploaderServer in httpTools/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="httpTools" />
       <working_directory value="$PROJECT_DIR$/test" />
       <framework value="gotest" />
@@ -85,7 +137,40 @@
       <package value="httpTools/test" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestHttpServer$" />
+      <pattern value="^TestHttpUploaderServer$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNewVFileInfo in httpTools/src/domain/httpClient/vo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="httpTools" />
+      <working_directory value="$PROJECT_DIR$/src/domain/httpClient/vo" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="httpTools/src/domain/httpClient/vo" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestNewVFileInfo$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNewVFileInfo in httpTools/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="httpTools" />
+      <working_directory value="$PROJECT_DIR$/test" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="httpTools/test" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestNewVFileInfo$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNewVFileList in httpTools/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="httpTools" />
+      <working_directory value="$PROJECT_DIR$/test" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="httpTools/test" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestNewVFileList$" />
       <method v="2" />
     </configuration>
     <configuration name="build linux" type="ShConfigurationType">
@@ -98,13 +183,19 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Test.TestHttpServer in httpTools/test" />
       <item itemvalue="Shell Script.build linux" />
+      <item itemvalue="Go Test.TestHttpUploaderServer in httpTools/test" />
+      <item itemvalue="Go Test.TestNewVFileInfo in httpTools/src/domain/httpClient/vo" />
+      <item itemvalue="Go Test.TestNewVFileInfo in httpTools/test" />
+      <item itemvalue="Go Test.TestNewVFileList in httpTools/test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestHttpUploaderServer in httpTools/test" />
         <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Test.TestHttpServer in httpTools/test" />
+        <item itemvalue="Go Test.TestNewVFileList in httpTools/test" />
+        <item itemvalue="Go Test.TestNewVFileInfo in httpTools/test" />
+        <item itemvalue="Go Test.TestNewVFileInfo in httpTools/src/domain/httpClient/vo" />
       </list>
     </recent_temporary>
   </component>
@@ -120,26 +211,31 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="233" y="0" key="#Deployment" timestamp="1609581463722">
+    <state x="233" y="0" key="#Deployment" timestamp="1609652787611">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#Deployment/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609581463722" />
+    <state x="233" y="0" key="#Deployment/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1609652787611" />
     <state x="233" y="0" key="#Go_Modules_(vgo)" timestamp="1609410078371">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#Go_Modules_(vgo)/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609410078371" />
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609577505511">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609741082724">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609577505511" />
-    <state x="381" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609576716191">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609741082724" />
+    <state x="381" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609728276459">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="381" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609576716191" />
-    <state x="446" y="57" key="#com.intellij.ide.util.MemberChooser" timestamp="1609582639747">
+    <state x="381" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609728276459" />
+    <state x="446" y="57" key="#com.intellij.ide.util.MemberChooser" timestamp="1609732423340">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609582639747" />
+    <state x="446" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609732423340" />
+    <state width="665" height="438" key="DebuggerActiveHint" timestamp="1609742389064">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="665" height="438" key="DebuggerActiveHint/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609742389064" />
     <state x="93" y="93" width="1095" height="495" key="DiffContextDialog" timestamp="1609416302471">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -148,38 +244,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609555909379" />
-    <state width="768" height="775" key="GridCell.Tab.0.bottom" timestamp="1609590711279">
+    <state width="1281" height="625" key="GridCell.Tab.0.bottom" timestamp="1609742832834">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="768" height="775" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609590711279" />
-    <state width="768" height="775" key="GridCell.Tab.0.center" timestamp="1609590711279">
+    <state width="1281" height="625" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609742832834" />
+    <state width="1281" height="625" key="GridCell.Tab.0.center" timestamp="1609742832824">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="768" height="775" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609590711279" />
-    <state width="768" height="775" key="GridCell.Tab.0.left" timestamp="1609590711279">
+    <state width="1281" height="625" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609742832824" />
+    <state width="1281" height="625" key="GridCell.Tab.0.left" timestamp="1609742832805">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="768" height="775" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609590711279" />
-    <state width="768" height="775" key="GridCell.Tab.0.right" timestamp="1609590711279">
+    <state width="1281" height="625" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609742832805" />
+    <state width="1281" height="625" key="GridCell.Tab.0.right" timestamp="1609742832830">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="768" height="775" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609590711279" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1609586082394">
+    <state width="1281" height="625" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609742832830" />
+    <state width="1537" height="768" key="GridCell.Tab.1.bottom" timestamp="1609742832209">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609586082394" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1609586082394">
+    <state width="1537" height="768" key="GridCell.Tab.1.bottom/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609742832209" />
+    <state width="1537" height="768" key="GridCell.Tab.1.center" timestamp="1609742832209">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609586082394" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1609586082393">
+    <state width="1537" height="768" key="GridCell.Tab.1.center/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609742832209" />
+    <state width="1537" height="768" key="GridCell.Tab.1.left" timestamp="1609742832209">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609586082393" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1609586082394">
+    <state width="1537" height="768" key="GridCell.Tab.1.left/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609742832209" />
+    <state width="1537" height="768" key="GridCell.Tab.1.right" timestamp="1609742832209">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609586082394" />
+    <state width="1537" height="768" key="GridCell.Tab.1.right/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609742832209" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1609553164213">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -188,10 +284,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="416" y="54" key="com.goide.refactor.move.GoMoveDeclarationDialog/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609555932226" />
-    <state x="506" y="234" key="publish.login" timestamp="1609581364724">
+    <state x="506" y="234" key="publish.login" timestamp="1609652763471">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="506" y="234" key="publish.login/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609581364724" />
+    <state x="506" y="234" key="publish.login/0.0.1280.680/0.-1080.1920.1040@0.0.1280.680" timestamp="1609652763471" />
     <state x="303" y="1" key="search.everywhere.popup" timestamp="1609584520018">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

@@ -20,8 +20,8 @@ type ProxyInfo struct {
 func NewProxy(builders ...Builder) *ProxyInfo {
 	c := &ProxyInfo{
 		HttpMethod: vo.NewVHttpMethod("GET"),
-		TargetURL:  vo.NewVTargetURL("127.0.0.1"),
-		Route:      vo.NewVRoute(""),
+		TargetURL:  vo.NewVTargetURL("http://127.0.0.1"),
+		Route:      vo.NewVRoute("/"),
 	}
 	Builders(builders).apply(c)
 	return c

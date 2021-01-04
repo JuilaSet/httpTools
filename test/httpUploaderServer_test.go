@@ -1,56 +1,28 @@
 package test
 
 import (
-	"bytes"
-	"fmt"
-	"io"
-	"io/ioutil"
-	"log"
-	"mime/multipart"
-	"net/http"
-	"os"
+	"httpTools/src/domain/httpServer"
+	"httpTools/src/infrastructure"
+	"httpTools/src/infrastructure/config"
+	"httpTools/src/infrastructure/event"
 	"testing"
 )
 
 func TestHttpUploaderServer(t *testing.T) {
-	filename := "/aaa/bbb"
-	targetUrl := "http://localhost:8448/www/aaa/bbb"
+	// 配置项目
+	configFilename := "config.yml"
+	appConfig := config.NewAppConfig(configFilename)
 
-	bodyBuf := &bytes.Buffer{}
-	bodyWriter := multipart.NewWriter(bodyBuf)
+	// 事件存储
+	emitter := event.NewEmitter()
+	emitter.Start()
 
-	// 关键的一步操作
-	fileWriter, err := bodyWriter.CreateFormFile("file", filename)
-	if err != nil {
-		fmt.Println("error writing to buffer")
-	}
+	// 构建服务
+	httpEvent := httpServer.NewEvent(emitter, appConfig)
 
-	// 打开文件句柄操作
-	fh, err := os.Open(filename)
-	if err != nil {
-		log.Fatal("error opening file")
-	}
-	defer fh.Close()
+	// 唤起服务
+	httpEvent.Emit()
 
-	// iocopy
-	_, err = io.Copy(fileWriter, fh)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	contentType := bodyWriter.FormDataContentType()
-	bodyWriter.Close()
-
-	resp, err := http.Post(targetUrl, contentType, bodyBuf)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	defer resp.Body.Close()
-	resp_body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(resp.Status)
-	fmt.Println(string(resp_body))
+	infrastructure.OSWait()
 }
+

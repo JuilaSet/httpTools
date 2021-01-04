@@ -2,7 +2,7 @@ package vo
 
 import (
 	"errors"
-	"httpTools/src/infrastructure/fileSys"
+	"httpTools/src/infrastructure/fileUtil"
 )
 
 type VDir struct {
@@ -10,7 +10,7 @@ type VDir struct {
 }
 
 func NewVDir(dirPath string) *VDir {
-	if !fileSys.IsExist(dirPath) {
+	if !fileUtil.IsExist(dirPath) {
 		panic(errors.New("file not exist"))
 	}
 	return &VDir{Path: dirPath}

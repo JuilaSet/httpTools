@@ -23,6 +23,11 @@ func NewFileNameInfo(path string) *VFileNameInfo {
 	paths := strings.Split(path, "/")[1:]
 	dir := strings.Join(paths[0:len(paths)-1], "/")
 	filename := paths[len(paths)-1]
+
+	if filename[0] == '/' {
+		panic(errors.New("file name incorrect: " + filename))
+	}
+
 	return &VFileNameInfo{
 		Paths: paths,
 		Dir:   dir,
@@ -36,7 +41,10 @@ func (info *VFileNameInfo) FileName() string {
 }
 
 func (info *VFileNameInfo) FileDir(base string) string {
-	return base + "/" + info.Dir
+	if info.Dir != "" {
+		return base +  "/" + info.Dir
+	}
+	return base
 }
 
 func (info *VFileNameInfo) FilePath(base string) string {
