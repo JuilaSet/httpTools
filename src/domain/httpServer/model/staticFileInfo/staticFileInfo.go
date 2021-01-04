@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/wxnacy/wgo/file"
 	"httpTools/src/domain/httpServer/vo"
 	"httpTools/src/infrastructure/fileUtil"
 	"httpTools/src/infrastructure/httpUtil"
@@ -59,12 +60,20 @@ func (static *StaticFileInfo) fileDeleteHandler(c *gin.Context) (err error) {
 	fileInfo := vo.NewFileNameInfo(c.Param("Name"))
 
 	// 删除文件
-	if err = os.Remove(fileInfo.FilePath(static.Dir.Path)); err != nil {
-		// 删除失败
-		return err
+	filepath := fileInfo.FilePath(static.Dir.Path)
+	if file.IsDir(filepath) {
+		if err = os.RemoveAll(filepath); err != nil {
+			// 删除失败
+			return err
+		}
+	} else {
+		if err = os.Remove(filepath); err != nil {
+			// 删除失败
+			return err
+		}
 	}
 
-	// 回显文件名
+	// 回显文件名url
 	c.String(http.StatusOK, fileInfo.FilePath(static.Route.Path))
 	return
 }

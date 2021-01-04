@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed2fc744-1931-4b85-a023-570263fc7fde" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/build/upload/afile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/exception/ConnectFailedError.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/afile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/httpTool_dev.exe" beforeDir="false" afterPath="$PROJECT_DIR$/build/httpTool_dev.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpproxy" beforeDir="false" afterPath="$PROJECT_DIR$/httpproxy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/fileUploader/DirUploader.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/fileUploader/DirUploader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/fileUploader/VFileList.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/fileUploader/VFileList.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/httpServer/model/staticFileInfo/staticFileInfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/httpServer/model/staticFileInfo/staticFileInfo.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +82,7 @@
       <recent name="D:\D_box\tools\httpTools\src\domain\domEvent\ConfigFileReload" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.build linux">
+  <component name="RunManager" selected="Go Build.httpTool_dev">
     <configuration name="httpTool_dev" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="httpTools" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -196,10 +187,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="22" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609744512051" />
-    <state x="381" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609728276459">
+    <state x="381" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609749070468">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="381" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609728276459" />
+    <state x="381" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609749070468" />
     <state x="446" y="57" key="#com.intellij.ide.util.MemberChooser" timestamp="1609732423340">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -216,22 +207,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609744492137" />
-    <state width="1281" height="625" key="GridCell.Tab.0.bottom" timestamp="1609748436730">
+    <state width="1281" height="625" key="GridCell.Tab.0.bottom" timestamp="1609748599431">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="625" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609748436730" />
-    <state width="1281" height="625" key="GridCell.Tab.0.center" timestamp="1609748436715">
+    <state width="1281" height="625" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609748599431" />
+    <state width="1281" height="625" key="GridCell.Tab.0.center" timestamp="1609748599431">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="625" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609748436715" />
-    <state width="1281" height="625" key="GridCell.Tab.0.left" timestamp="1609748436715">
+    <state width="1281" height="625" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609748599431" />
+    <state width="1281" height="625" key="GridCell.Tab.0.left" timestamp="1609748599430">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="625" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609748436715" />
-    <state width="1281" height="625" key="GridCell.Tab.0.right" timestamp="1609748436715">
+    <state width="1281" height="625" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609748599430" />
+    <state width="1281" height="625" key="GridCell.Tab.0.right" timestamp="1609748599431">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="625" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609748436715" />
+    <state width="1281" height="625" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1536.824@0.0.1280.680" timestamp="1609748599431" />
     <state width="1281" height="625" key="GridCell.Tab.1.bottom" timestamp="1609747567626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
