@@ -16,6 +16,11 @@ app:
       target: "http://127.0.0.1:8448/www"
       # 触发文件夹上传的http api, POST: 上传
       route: "/upload"
+      # 排除的文件夹或文件
+      excludes:
+       - "/exec"
     - dir: "./upload"
       target: "http://49.234.66.103:8448/www"
       route: "/cloudUpload"
+      excludes:
+        - "/exec"

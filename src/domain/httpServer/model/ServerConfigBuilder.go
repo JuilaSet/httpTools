@@ -2,6 +2,7 @@ package model
 
 import (
 	"httpTools/src/domain/httpServer/model/fileUploader"
+	"httpTools/src/domain/httpServer/model/fileUploader/vo"
 	"httpTools/src/domain/httpServer/model/proxyInfo"
 	"httpTools/src/domain/httpServer/model/staticFileInfo"
 	"httpTools/src/infrastructure/config"
@@ -43,9 +44,10 @@ func WithConfig(c *config.Config) Builder {
 		// 构建文件上传器
 		for _, u := range c.App.Uploads {
 			config.Uploads = append(config.Uploads, fileUploader.NewDirUploader(
-				fileUploader.NewVUploadDir(u.Dir),
-				fileUploader.NewVRoute(u.Route),
-				fileUploader.NewVTarget(u.Target),
+				vo.NewVUploadDir(u.Dir),
+				vo.NewVRoute(u.Route),
+				vo.NewVTarget(u.Target),
+				vo.NewVExclude(u.Excludes),
 			))
 		}
 	}

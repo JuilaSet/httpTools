@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"httpTools/src/domain/httpServer/model/fileUploader/vo"
 	"httpTools/src/infrastructure/exception"
 	"httpTools/src/infrastructure/httpUtil"
 	"io"
@@ -25,13 +26,19 @@ func (u DirUploads) Apply(engine *gin.Engine) {
 }
 
 type DirUploader struct {
-	List   *VFileList `json:"list"`
-	Route  *VRoute    `json:"route"`
-	Target *VTarget   `json:"target"`
+	List   *vo.VFileList  `json:"list"`
+	Route  *vo.VRoute     `json:"route"`
+	Target *vo.VTarget    `json:"target"`
+	Exclude *vo.VExcludes `json:"exclude"`
 }
 
-func NewDirUploader(VDir *VUploadDir, route *VRoute, target *VTarget) *DirUploader {
-	return &DirUploader{NewVFileList(VDir), route, target}
+func NewDirUploader(VDir *vo.VUploadDir, route *vo.VRoute, target *vo.VTarget, exclude *vo.VExcludes) *DirUploader {
+	return &DirUploader{
+		vo.NewVFileList(VDir),
+		route,
+		target,
+		exclude,
+	}
 }
 
 func (d *DirUploader) Apply(engine *gin.Engine) {
@@ -60,9 +67,11 @@ func (d *DirUploader) refresh() func(c *gin.Context) {
 func (d *DirUploader) syncDirApi(c *gin.Context) error {
 	payload := strings.NewReader("")
 	req, _ := http.NewRequest(http.MethodDelete, d.Target.URL, payload)
-	http.DefaultClient.Do(req)
-	d.uploadApi(c)
-	return nil
+	_, err := http.DefaultClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	return d.uploadApi(c)
 }
 
 func (d *DirUploader) uploadApi(c *gin.Context) error {
@@ -83,12 +92,21 @@ func (d *DirUploader) uploadApi(c *gin.Context) error {
 	return nil
 }
 
-func (d *DirUploader) UploadDir(target *VTarget, callBack func(resp *http.Response, err error)) {
+func (d *DirUploader) UploadDir(target *vo.VTarget, callBack func(resp *http.Response, err error)) {
 	for _, filepath := range d.List.GetFileList() {
 		// ./uploadApi/aaa/txt -> (./uploadApi/aaa/txt, http://xxxx/www/aaa/txt)
-		log.Println("UPLOAD: ", d.List.GetDirPath()+filepath, target.URL+filepath)
-		resp, err := uploadFile(d.List.GetDirPath()+filepath, target.URL+filepath)
-		callBack(resp, err)
+		b := true
+		for _, ex := range d.Exclude.FilePathList {
+			if strings.HasPrefix(filepath, ex) {
+				b = false
+				break
+			}
+		}
+		if b {
+			log.Println("UPLOAD: ", d.List.GetDirPath()+filepath, target.URL+filepath)
+			resp, err := uploadFile(d.List.GetDirPath()+filepath, target.URL+filepath)
+			callBack(resp, err)
+		}
 	}
 }
 

@@ -1,10 +1,10 @@
 package test
 
 import (
-	"httpTools/src/domain/httpServer/model/fileUploader"
+	"httpTools/src/domain/httpServer/model/fileUploader/vo"
 	"testing"
 )
 
 func TestNewVFileInfo(t *testing.T) {
-	fileUploader.NewVUploadDir("./upload")
+	vo.NewVUploadDir("./upload")
 }
