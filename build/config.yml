@@ -1,6 +1,6 @@
 app:
   port: 8448
   uploads:
-    - dir: "./upload"
+    - dir: "/D_box/tools/httpTools"
       target: "http://49.234.66.103:8448/www"
       route: "/cloudUpload"
