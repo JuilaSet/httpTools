@@ -14,5 +14,8 @@ app:
     - dir: "./upload"  # 需要上传的文件夹目录
       # 上传目标服务的http api
       target: "http://127.0.0.1:8448/www"
-      # 触发文件夹上传的http api, POST: 上传, DELETE: 删除
+      # 触发文件夹上传的http api, POST: 上传
       route: "/upload"
+    - dir: "./upload"
+      target: "http://49.234.66.103:8448/www"
+      route: "/cloudUpload"

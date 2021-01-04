@@ -26,4 +26,13 @@ func (f *VFileList) GetDirPath() string {
 	return f.dir.Path
 }
 
+// 重新加载
+func (f *VFileList) Refresh() {
+	l, err := f.dir.GetFileList()
+	if err != nil {
+		panic(err)
+	}
+	f.List = l
+}
+
 

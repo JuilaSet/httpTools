@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"httpTools/src/domain/httpServer/vo"
+	"httpTools/src/infrastructure/fileUtil"
 	"httpTools/src/infrastructure/httpUtil"
 	"io"
 	"log"
@@ -97,6 +98,11 @@ func (static *StaticFileInfo) filePostHandler(c *gin.Context) (err error) {
 	if err != nil {
 		c.String(500, "save Dir error")
 		log.Fatal(err.Error())
+	}
+
+	// 如果源文件存在，就删除
+	if fileUtil.IsExist(fileInfo.FilePath(static.Dir.Path)) {
+		os.Remove(fileInfo.FilePath(static.Dir.Path))
 	}
 
 	dst, err = os.Create(fileInfo.FilePath(static.Dir.Path))

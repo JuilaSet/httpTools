@@ -2,8 +2,10 @@ package fileUploader
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"httpTools/src/infrastructure/exception"
 	"httpTools/src/infrastructure/httpUtil"
 	"io"
 	"io/ioutil"
@@ -41,12 +43,15 @@ func (d *DirUploader) Apply(engine *gin.Engine) {
 }
 
 func (d *DirUploader) uploadApi(c *gin.Context) error {
+	// 刷新列表
+	d.List.Refresh()
+
 	var list []string
 	d.UploadDir(d.Target, func(resp *http.Response, err error) {
 		defer resp.Body.Close()
 		respBody, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
-			log.Fatal(err)
+			panic(err)
 		}
 		list = append(list, string(respBody))
 		fmt.Println("RESULT: ", resp.Status, string(respBody))
@@ -78,14 +83,14 @@ func uploadFile(filepath, targetUrl string) (*http.Response, error) {
 	// 打开文件句柄操作
 	fh, err := os.Open(filepath)
 	if err != nil {
-		log.Fatal("error opening file")
+		panic(errors.New("error opening file"))
 	}
 	defer fh.Close()
 
 	// io copy
 	_, err = io.Copy(fileWriter, fh)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
 	contentType := bodyWriter.FormDataContentType()
@@ -93,7 +98,7 @@ func uploadFile(filepath, targetUrl string) (*http.Response, error) {
 
 	resp, err := http.Post(targetUrl, contentType, bodyBuf)
 	if err != nil {
-		log.Fatal(err)
+		panic(exception.ConnectTimeoutException)
 	}
 
 	//// 返回结果
