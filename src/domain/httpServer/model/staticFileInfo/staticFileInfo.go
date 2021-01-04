@@ -9,6 +9,7 @@ import (
 	"httpTools/src/infrastructure/fileUtil"
 	"httpTools/src/infrastructure/httpUtil"
 	"io"
+	"io/ioutil"
 	"log"
 	"mime/multipart"
 	"net/http"
@@ -57,24 +58,41 @@ func (static *StaticFileInfo) Apply(engine *gin.Engine) {
 }
 
 func (static *StaticFileInfo) fileDeleteHandler(c *gin.Context) (err error) {
-	fileInfo := vo.NewFileNameInfo(c.Param("Name"))
+	filename := c.Param("Name")
 
-	// 删除文件
-	filepath := fileInfo.FilePath(static.Dir.Path)
-	if file.IsDir(filepath) {
-		if err = os.RemoveAll(filepath); err != nil {
-			// 删除失败
-			return err
+	// 当前文件夹下所有文件
+	if filename == "/" {
+		var list = make([]string, 0)
+		rd, _ := ioutil.ReadDir(static.Dir.Path)
+		for _, fi := range rd {
+			if err = os.RemoveAll(static.Dir.Path + "/" + fi.Name()); err != nil {
+				// 删除失败
+				return err
+			} else {
+				list = append(list, fi.Name())
+			}
 		}
+		// 回显文件名url
+		c.JSON(http.StatusOK, list)
 	} else {
-		if err = os.Remove(filepath); err != nil {
-			// 删除失败
-			return err
+		fileInfo := vo.NewFileNameInfo(filename)
+		// 删除文件
+		filepath := fileInfo.FilePath(static.Dir.Path)
+		if file.IsDir(filepath) {
+			if err = os.RemoveAll(filepath); err != nil {
+				// 删除失败
+				return err
+			}
+		} else {
+			if err = os.Remove(filepath); err != nil {
+				// 删除失败
+				return err
+			}
 		}
-	}
 
-	// 回显文件名url
-	c.String(http.StatusOK, fileInfo.FilePath(static.Route.Path))
+		// 回显文件名url
+		c.String(http.StatusOK, fileInfo.FilePath(static.Route.Path))
+	}
 	return
 }
 

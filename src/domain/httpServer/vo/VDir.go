@@ -3,6 +3,7 @@ package vo
 import (
 	"errors"
 	"httpTools/src/infrastructure/fileUtil"
+	"strings"
 )
 
 type VDir struct {
@@ -10,6 +11,9 @@ type VDir struct {
 }
 
 func NewVDir(dirPath string) *VDir {
+	if strings.Contains(dirPath, "..") {
+		panic(errors.New("cannot use relative path for safety"))
+	}
 	if !fileUtil.IsExist(dirPath) {
 		panic(errors.New("file not exist"))
 	}

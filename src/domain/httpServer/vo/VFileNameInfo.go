@@ -15,11 +15,14 @@ type VFileNameInfo struct {
 
 // "/www/aaa/bbb" -> Dir: "/www/aaa" , Name: "bbb"
 func NewFileNameInfo(path string) *VFileNameInfo {
+	if strings.Contains(path, "..") {
+		panic(errors.New("cannot use relative path for safety"))
+	}
+
 	e, _ := regexp.Compile(`^(/[^/]+)+$`)
 	if !e.MatchString(path) {
 		panic(errors.New("filename incorrect"))
 	}
-
 	paths := strings.Split(path, "/")[1:]
 	dir := strings.Join(paths[0:len(paths)-1], "/")
 	filename := paths[len(paths)-1]

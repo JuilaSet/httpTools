@@ -13,6 +13,7 @@ import (
 	"mime/multipart"
 	"net/http"
 	"os"
+	"strings"
 )
 
 type DirUploads []*DirUploader
@@ -34,19 +35,41 @@ func NewDirUploader(VDir *VUploadDir, route *VRoute, target *VTarget) *DirUpload
 }
 
 func (d *DirUploader) Apply(engine *gin.Engine) {
+	engine.Use(d.refresh())
 	engine.POST(d.Route.Path, httpUtil.ErrorWrapper(
 		d.uploadApi,
 		func(err error) string {
 			return err.Error()
 		},
 	))
+	engine.PUT(d.Route.Path, httpUtil.ErrorWrapper(
+		d.syncDirApi,
+		func(err error) string {
+			return err.Error()
+		},
+	))
+}
+
+func (d *DirUploader) refresh() func(c *gin.Context) {
+	return func(c *gin.Context) {
+		// 刷新列表
+		d.List.Refresh()
+	}
+}
+
+func (d *DirUploader) syncDirApi(c *gin.Context) error {
+	payload := strings.NewReader("")
+	req, _ := http.NewRequest(http.MethodDelete, d.Target.URL, payload)
+	http.DefaultClient.Do(req)
+	d.uploadApi(c)
+	return nil
 }
 
 func (d *DirUploader) uploadApi(c *gin.Context) error {
 	// 刷新列表
 	d.List.Refresh()
 
-	var list []string
+	var list = make([]string, 0)
 	d.UploadDir(d.Target, func(resp *http.Response, err error) {
 		defer resp.Body.Close()
 		respBody, err := ioutil.ReadAll(resp.Body)
